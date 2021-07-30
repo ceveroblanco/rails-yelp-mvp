@@ -15,5 +15,11 @@
   <%= @restaurant.rating %>
 </p>
 
+<h2>Reviews. <small><%= link_to  "Deja tu comentario", new_restaurant_review_path(@restaurant) %></small></h2>
+
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.content %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
